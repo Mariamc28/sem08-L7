@@ -1,0 +1,69 @@
+@server = https://texai-supreme-potato-4wgxxr65f5g5x-8080.preview.app.github.dev
+
+###
+
+GET {{server}}
+###
+GET {{server}}/cursos
+
+###
+GET {{server}}/cursos?size=2
+
+###
+GET {{server}}/cursos?size=2&page=1
+
+###
+GET {{server}}/cursos?sort=creditos,desc
+
+###
+GET {{server}}/cursos?size=2&page=1&sort=creditos,desc
+
+### 
+POST {{server}}/cursos
+Content-Type: application/json
+
+{"nombre": "Compiladores", "creditos": 5}
+
+### 
+PATCH {{server}}/cursos/152
+Content-Type: application/json
+
+{"creditos": 5}
+
+###
+
+DELETE {{server}}/cursos/203
+
+###
+GET {{server}}/cursos/search/findByNombre?nombre=Algoritmos
+###
+GET {{server}}/cursos
+###
+GET {{server}}/profile/cursos
+###
+GET {{server}}/cursos/search
+###
+
+
+#################
+
+
+GET {{server}}/carreras
+###
+GET {{server}}/carreras/2/cursos
+###
+POST {{server}}/carreras
+Content-Type: application/json
+
+{"nombre": "Marketing"}
+
+### 
+PATCH {{server}}/cursos/2
+Content-Type: application/json
+
+{"id_carrera": 2}
+
+
+
+###
+GET {{server}}/cursos/52/carrera
